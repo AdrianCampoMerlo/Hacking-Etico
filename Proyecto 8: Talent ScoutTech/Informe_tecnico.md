@@ -9,6 +9,8 @@ La página no permite añadir jugadores a usuarios no autenticados, un formulari
 Consulta realizada:
 
 ![Untitled](img/Untitled.png)
+![Untitled](img/Untitled%201.png)
+
 
 | Valor | “1=” --a” |
 | --- | --- |
@@ -18,7 +20,7 @@ Consulta realizada:
 | Campos del formulario web utilizados en la consulta SQL | Usuario |
 | Campos del formulario web no utilizados en la consulta SQL | Contraseña |
 
-![Untitled](img/Untitled%201.png)
+
 
 **b) Gracias a la SQL Injection del apartado anterior, sabemos que este formulario es vulnerable y conocemos el nombre de los campos de la tabla “users”. Para tratar de impersonar a un usuario, nos hemos descargado un diccionario que contiene algunas de las contraseñas más utilizadas (se listan a continuación):**
 
