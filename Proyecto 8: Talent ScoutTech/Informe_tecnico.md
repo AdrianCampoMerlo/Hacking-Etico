@@ -1,6 +1,15 @@
 # Informe técnico: Talent ScoutTech
 
-### Parte 1 - SQLi
+## Índice
+
+1. [Parte 1 - SQLi](#1)  
+2. [Parte 2 - XSS](#2)  
+3. [Parte 3 - Control de acceso, autenticación y sesiones de usuarios](#3)  
+4. [Parte 4 - Servidores web](#4)  
+5. [Parte 5 - CSRF](#5)  
+
+
+### Parte 1 - SQLi <div id="1" />
 
 La página no permite añadir jugadores a usuarios no autenticados, un formulario nos exige que introduzcamos un usuario y contraseña válidos. Lo primero que haremos es comprobar que este formulario es vulnerable a una inyección y aprovecharlo para saltarnos esta protección.
 
@@ -69,7 +78,7 @@ Esto nos permite estudiar el código fuente de “add_comment.php” y encontrar
 | Descripción del ataque | El atacante envía una solicitud HTTP con un 'id' de jugador modificado y una cookie 'userId' falsificada, permitiendo publicar comentarios en nombre de otros usuarios. |
 | ¿Cómo podemos hacer que sea segura esta entrada? | Implementar un control de acceso adecuado, validando la autenticación y permisos del usuario. Además, se deben validar y sanear los datos del usuario para prevenir inyecciones de código. |
 
-### Parte 2 - XSS
+### Parte 2 - XSS <div id="2" />
 
 En vistas de los problemas de seguridad que habéis encontrado, empezáis a sospechar que esta aplicación quizás es vulnerable a XSS (Cross Site Scripting).
 
@@ -103,7 +112,7 @@ d) Descubrid si hay alguna otra página que esté afectada por esta misma vulner
 | --- | --- |
 | ¿Cómo lo he descubierto? | Haciendo una búsqueda de la variable problemática en el código de las páginas visitadas. |
 
-### Parte 3 - Control de acceso, autenticación y sesiones de usuarios
+### Parte 3 - Control de acceso, autenticación y sesiones de usuarios <div id="3" />
 
 a) En el ejercicio 1, hemos visto cómo era inseguro el acceso de los usuarios a la aplicación. En la página de ***register.php*** tenemos el registro de usuario. ¿Qué medidas debemos implementar para evitar que el registro sea inseguro? Justifica esas medidas e implementa las medidas que sean factibles en este proyecto.
 
@@ -202,7 +211,7 @@ e) Por último, comprobando el flujo de la sesión del usuario. Analiza si está
 - **Gestión de sesiones segura:** Utilizar un mecanismo seguro para gestionar las sesiones de usuario, como cookies seguras y tokens de sesión únicos.
 - **Verificación de sesiones activas:** Implementar un mecanismo para verificar si una sesión es activa y válida en cada solicitud de página protegida.
 
-### Parte 4 - Servidores web
+### Parte 4 - Servidores web <div id="4" />
 
 ¿Qué medidas de seguridad se implementaríais en el servidor web para reducir el riesgo a ataques?
 
@@ -212,7 +221,7 @@ e) Por último, comprobando el flujo de la sesión del usuario. Analiza si está
 - **Parche de Actualización:** Mantener actualizados todo el software del servidor para corregir vulnerabilidades conocidas y mejorar la seguridad.
 - **Restricción de ejecución de scripts:** Configurar el servidor para que solo permita la ejecución de scripts.
 
-### Parte 5 - CSRF
+### Parte 5 - CSRF <div id="5" />
 
 Ahora ya sabemos que podemos realizar un ataque XSS. Hemos preparado el siguiente enlace: [http://web.pagos/donate.php?amount=100&receiver=attacker,](http://web.pagos/donate.php?amount=100&receiver=attacker) mediante el cual, cualquiera que haga click hará una donación de 100€ a nuestro usuario (con nombre 'attacker') de la famosa plataforma de pagos online 'web.pagos' (Nota: como en realidad esta es una dirección inventada, vuestro navegador os devolverá un error 404).
 
