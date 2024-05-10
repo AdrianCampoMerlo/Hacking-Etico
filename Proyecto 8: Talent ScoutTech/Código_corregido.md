@@ -2,14 +2,15 @@
 
 ## Índice
 
-1. insert_player.php
-2. register.php
-3. auth.php
-4. show_comments.php
-5. register.php
-6. add_comment.php
+1. [insert_player.php](#1)
+2. [register.php](#2)
+3. [auth.php](#3)
+4. [show_comments.php](#4)
+5. [register.php](#5)
+6. [add_comment.php](#6)
 
-## insert_player.php
+## insert_player.php  <div id="1" />
+
 
 ```html
 <?php
@@ -99,7 +100,7 @@ if (isset($_GET['id'])) {
 </html>
 ```
 
-## register.php
+## register.php <div id="2" />
 
 ```html
 <?php
@@ -169,7 +170,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ```
 
-## auth.php
+## auth.php <div id="3" />
 
 ```html
 <?php
@@ -292,7 +293,7 @@ setcookie('password', $_COOKIE['password']);
 
 ```
 
-## show_comments.php
+## show_comments.php <div id="4" />
 
 ```html
 <!doctype html>
@@ -356,7 +357,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) { // Asegurar que 'id' sea nu
 
 ```
 
-## register.php
+## register.php <div id="5" />
 
 ```html
 <?php
@@ -420,7 +421,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 ```
 
-## add_comment.php
+## add_comment.php <div id="6" />
 
 ```html
 <?php
