@@ -79,8 +79,7 @@ En vistas de los problemas de seguridad que habéis encontrado, empezáis a sosp
 
 ![Untitled](img/Untitled%204.png)
 
-| Introduzca el mensaje | <script>alert('¡CUIDAO VULNERABLE!');</script>
- |
+| Introduzca el mensaje | <script>alert('¡CUIDAO VULNERABLE!');</script> |
 | --- | --- |
 | En el formulario de la página | show_comments.php |
 
