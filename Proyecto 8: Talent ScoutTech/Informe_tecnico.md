@@ -8,7 +8,7 @@ La página no permite añadir jugadores a usuarios no autenticados, un formulari
 
 Consulta realizada:
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled.png)
+![Untitled](img/Untitled.png)
 
 | Valor | “1=” --a” |
 | --- | --- |
@@ -18,7 +18,7 @@ Consulta realizada:
 | Campos del formulario web utilizados en la consulta SQL | Usuario |
 | Campos del formulario web no utilizados en la consulta SQL | Contraseña |
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%201.png)
+![Untitled](img/Untitled%201.png)
 
 **b) Gracias a la SQL Injection del apartado anterior, sabemos que este formulario es vulnerable y conocemos el nombre de los campos de la tabla “users”. Para tratar de impersonar a un usuario, nos hemos descargado un diccionario que contiene algunas de las contraseñas más utilizadas (se listan a continuación):**
 
@@ -38,7 +38,7 @@ El ataque realizado:
 
 `hydra -t 10 -w 30 -L /usr/share/wordlists/rockyou.txt -P /home/kali/Desktop/poss.txt 192.168.1.36 http-post-form "/insert_player.php:username=^USER^&password=^PASS^:Invalid user or password."` 
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%202.png)
+![Untitled](img/Untitled%202.png)
 
 | Explicación del ataque | Este ataque consiste en la inyección de nombres de usuario y contraseñas en sus respectivos campos. hasta que encuentra la combinación correcta. |
 | --- | --- |
@@ -73,9 +73,9 @@ En vistas de los problemas de seguridad que habéis encontrado, empezáis a sosp
 
 **a) Para ver si hay un problema de XSS, crearemos un comentario que muestre un alert de Javascript siempre que alguien consulte el/los comentarios de aquel jugador (show_comments.php). Dad un mensaje que genere un «alert» de Javascript al consultar el listado de mensajes.**
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%203.png)
+![Untitled](img/Untitled%203.png)
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%204.png)
+![Untitled](img/Untitled%204.png)
 
 | Introduzca el mensaje | <script>alert('¡CUIDAO VULNERABLE!');</script>
  |
@@ -220,9 +220,9 @@ a) Editad un jugador para conseguir que, en el listado de jugadores (list_player
 Podríamos agregar el siguiente código en cualquiera de los usuarios:
 `<a href="[http://web.pagos/donate.php?amount=100&receiver=attacker](http://web.pagos/donate.php?amount=100&receiver=attacker)" target="_blank">Profile</a>`
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%205.png)
+![Untitled](img/Untitled%205.png)
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%206.png)
+![Untitled](img/Untitled%206.png)
 
 | En el campo | Team name |
 | --- | --- |
@@ -235,7 +235,7 @@ Con el siguiente comando:
 
 Se le ha añadido un comentario antes del script, así cuando se entre en la página cargada, se verá nuestro comentario, no un mensaje en blanco (antes de la redirección).
 
-![Untitled](Informe%20te%CC%81cnico%20Talent%20ScoutTech%207c0426c064e64d0185ecac43545f55c5/Untitled%207.png)
+![Untitled](img/Untitled%207.png)
 
 Cuando pulsamos en mostrar los comentarios de la persona a la que le hemos colocado el script, nos redirige automáticamente a la página deseada.
 
